@@ -1,18 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="15dp"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <EditText
+        android:id="@+id/name_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="User Name"
+        android:textStyle="bold"
+        android:layout_margin="15dp"
+        android:layout_marginBottom="5dp"
+        android:inputType="textPersonName" />
+    <EditText
+        android:id="@+id/email_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="User Email"
+        android:textStyle="bold"
+        android:layout_margin="15dp"
+        android:layout_marginBottom="5dp"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/hobby_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="User Hobby"
+        android:textStyle="bold"
+        android:layout_margin="15dp"
+        android:layout_marginBottom="5dp"
+        android:inputType="text" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            style="@style/Base.CardView"
+            android:id="@+id/add_btn"
+            android:layout_margin="5dp"
+            android:layout_marginStart="15dp"
+            android:text="Add user"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+            android:id="@+id/delete_btn"
+            android:layout_marginEnd="15dp"
+            android:text="Delete"/>
+
+
+    </LinearLayout>
+   <androidx.recyclerview.widget.RecyclerView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_margin="15dp"
+       android:id="@+id/user_recycler"/>
+
+</LinearLayout>
