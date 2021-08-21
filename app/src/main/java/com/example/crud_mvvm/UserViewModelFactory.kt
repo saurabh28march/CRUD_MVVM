@@ -1,5 +1,6 @@
 package com.example.crud_mvvm
 
+import androidx.databinding.Observable
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.crud_mvvm.repository.UserRepository
@@ -15,4 +16,6 @@ class UserViewModelFactory(private val userRepo:UserRepository):ViewModelProvide
        throw IllegalMonitorStateException("Invalid view model class")
 
     }
+
+
 }

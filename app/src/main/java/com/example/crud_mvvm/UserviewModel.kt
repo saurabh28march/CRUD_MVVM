@@ -1,6 +1,12 @@
 package com.example.crud_mvvm
 
+import android.content.Context
+import android.util.Log
+import android.view.View
+import android.view.inputmethod.InputMethodManager
+import androidx.core.content.ContextCompat.getSystemService
 import androidx.databinding.Bindable
+import androidx.databinding.Observable
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -9,9 +15,16 @@ import com.example.crud_mvvm.repository.UserRepository
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 
-class UserviewModel(private val userRepo: UserRepository) : ViewModel() {
+class UserviewModel(private val userRepo: UserRepository) : ViewModel(), Observable {
 
     val users=userRepo.users
+    override fun addOnPropertyChangedCallback(callback: Observable.OnPropertyChangedCallback?) {
+
+    }
+
+    override fun removeOnPropertyChangedCallback(callback: Observable.OnPropertyChangedCallback?) {
+
+    }
 
     @Bindable
     val user_name = MutableLiveData<String>()
@@ -43,6 +56,8 @@ class UserviewModel(private val userRepo: UserRepository) : ViewModel() {
         user_name.value=null
         user_email.value=null
         user_hobby.value=null
+
+        Log.i("Mytag","in view model")
 
     }
 
